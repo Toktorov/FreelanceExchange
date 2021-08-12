@@ -19,8 +19,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 api_urlpatterns = [
-    path('customers/', include('apps.customers.urls')),
-    path('executors/', include('apps.executors.urls')),
+    path('users/', include('apps.users.urls')),
 ]
 
 

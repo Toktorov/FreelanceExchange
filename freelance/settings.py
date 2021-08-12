@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     #apps
     'apps.users',
+    'apps.target',
 ]
 
 MIDDLEWARE = [

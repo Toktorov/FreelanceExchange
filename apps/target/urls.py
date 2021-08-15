@@ -3,5 +3,5 @@ from apps.target import views
 from django.urls import path
 
 urlpatterns = [
-    path('', views.TaskAPIViewSet.as_view({'get': 'list'}), name='task'),
+    path('', views.TargetAPIViewSet.as_view({'get': 'list'}), name='target'),
 ]

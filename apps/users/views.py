@@ -1,7 +1,17 @@
 from rest_framework import viewsets, generics
-from apps.users.models import Profile
-from apps.users.serializers import ProfileSerializer
+from apps.users.models import Customer, Freelancer, Transaction
+from apps.users.serializers import CustomerSerializer, FreelancerSerializer, TransactionSerializer
 
-class ProfileAPIViewSet(viewsets.ModelViewSet):
-    queryset = Profile.objects.all()
-    serializer_class = ProfileSerializer
+class CustomerAPIViewSet(viewsets.ModelViewSet):
+    queryset = Customer.objects.all()
+    serializer_class = CustomerSerializer
+
+class FreelancerAPIViewSet(viewsets.ModelViewSet):
+    queryset = Freelancer.objects.all()
+    serializer_class = FreelancerSerializer
+
+class TransactionAPIViewSet(viewsets.ModelViewSet):
+    queryset = Transaction.objects.all()
+    serializer_class = TransactionSerializer
+
+

@@ -1,7 +1,7 @@
 from rest_framework import viewsets, generics
-from apps.target.models import Task
-from apps.target.serializers import TaskSerializer
+from apps.target.models import Target
+from apps.target.serializers import TargetSerializer
 
-class TaskAPIViewSet(viewsets.ModelViewSet):
-    queryset = Task.objects.all()
-    serializer_class = TaskSerializer
+class TargetAPIViewSet(viewsets.ModelViewSet):
+    queryset = Target.objects.all()
+    serializer_class = TargetSerializer

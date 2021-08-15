@@ -20,7 +20,7 @@ from django.conf import settings
 
 api_urlpatterns = [
     path('users/', include('apps.users.urls')),
-    path('tasks/',include('apps.target.urls')),
+    path('targets/',include('apps.target.urls')),
 ]
 
 

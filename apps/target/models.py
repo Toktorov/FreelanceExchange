@@ -1,10 +1,11 @@
 from django.db import models
-from apps.users.models import Profile
+from apps.users.models import Customer
+
 
 # Create your models here.
-class Task(models.Model):
+class Target(models.Model):
     user = models.ForeignKey(
-        Profile, 
+        Customer, 
         on_delete=models.CASCADE, 
         related_name= 'user'
     )
@@ -20,16 +21,13 @@ class Task(models.Model):
         verbose_name='Описание:'
     )
 
-    price = models.PositiveIntegerField(
-        verbose_name='Цена:',
-        default = 0
-        )
-
-    STATUS_CHOISES = (
-        ('В ожидании', 'В ожиданни'),
-        ('Принят', 'Принят'),
+    amount = models.DecimalField(
+        default=0,
+        max_digits=12,
+        decimal_places=3
     )
-    status = models.CharField(choices=STATUS_CHOISES, max_length=255, verbose_name='Статус заказа:')
+
+    status = models.BooleanField(default=False, db_index=True)
 
     class Meta:
         verbose_name = 'Заказ'
